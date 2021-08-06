@@ -6,7 +6,7 @@
 
     <groupId>com.github.mrdimosthenis</groupId>
     <artifactId>synapses-java</artifactId>
-    <version>v8.0.0-RC1</version>
+    <version>v1.0.0-RC1</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
