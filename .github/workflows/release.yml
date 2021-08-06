@@ -4,8 +4,9 @@
 name: Maven Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [master, main]
+    tags: ["*"]
 
 jobs:
   build:
