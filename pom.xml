@@ -7,6 +7,19 @@
     <groupId>com.github.mrdimosthenis</groupId>
     <artifactId>synapses-java</artifactId>
     <version>v1.0.0-RC2</version>
+    <packaging>jar</packaging>
+
+    <name>synapses-java</name>
+    <description>A **neural networks** library for **Java**</description>
+    <url>https://github.com/mrdimosthenis/Synapses</url>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://rem.mit-license.org/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
