@@ -10,6 +10,7 @@ import com.github.mrdimosthenis.synapses.Fun;
 import com.github.mrdimosthenis.synapses.Net;
 import com.github.mrdimosthenis.synapses.Stats;
 
+import java.util.HashMap;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.Map;
@@ -29,13 +30,45 @@ public class ReadmeTest {
         randNet.json();
         // System.out.println(randNet.json());
 
-        Net net = new Net(
-                """
-                        [[{"activationF" : "sigmoid", "weights" : [-0.5,0.1,0.8]},
-                          {"activationF" : "sigmoid", "weights" : [0.7,0.6,-0.1]},
-                          {"activationF" : "sigmoid", "weights" : [-0.8,-0.1,-0.7]}],
-                         [{"activationF" : "sigmoid", "weights" : [0.5,-0.3,-0.4,-0.5]}]]
-                        """);
+        Net net = new Net("[\n" +
+                "  [\n" +
+                "    {\n" +
+                "      \"activationF\": \"sigmoid\",\n" +
+                "      \"weights\": [\n" +
+                "        -0.5,\n" +
+                "        0.1,\n" +
+                "        0.8\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"activationF\": \"sigmoid\",\n" +
+                "      \"weights\": [\n" +
+                "        0.7,\n" +
+                "        0.6,\n" +
+                "        -0.1\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"activationF\": \"sigmoid\",\n" +
+                "      \"weights\": [\n" +
+                "        -0.8,\n" +
+                "        -0.1,\n" +
+                "        -0.7\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  [\n" +
+                "    {\n" +
+                "      \"activationF\": \"sigmoid\",\n" +
+                "      \"weights\": [\n" +
+                "        0.5,\n" +
+                "        -0.3,\n" +
+                "        -0.4,\n" +
+                "        -0.5\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
+                "]");
 
         net.predict(new double[]{0.2, 0.6});
         // System.out.println(Arrays.toString(net.predict(new double[]{0.2, 0.6})));
@@ -44,13 +77,18 @@ public class ReadmeTest {
 
         new Net(new int[]{2, 3, 1}, 1000L);
 
-        IntFunction<Fun> activationF = layerIndex ->
-                switch (layerIndex) {
-                    case 0 -> Fun.IDENTITY;
-                    case 1 -> Fun.SIGMOID;
-                    case 2 -> Fun.LEAKY_RE_LU;
-                    default -> Fun.TANH;
-                };
+        IntFunction<Fun> activationF = layerIndex -> {
+            switch(layerIndex) {
+                case 0:
+                    return Fun.SIGMOID;
+                case 1:
+                    return Fun.IDENTITY;
+                case 2:
+                    return Fun.LEAKY_RE_LU;
+                default:
+                    return Fun.TANH;
+            }
+        };
 
         IntFunction<Double> weightInitF = _layerIndex ->
                 1.0 - 2.0 * new Random().nextDouble();
@@ -75,29 +113,26 @@ public class ReadmeTest {
         Stats.score(expAndPredVals.get());
         // System.out.println(Stats.score(expAndPredVals.get()));
 
-        Map<String, String> setosa = Map.of(
-                "petal_length", "1.5",
-                "petal_width", "0.1",
-                "sepal_length", "4.9",
-                "sepal_width", "3.1",
-                "species", "setosa"
-        );
+        Map<String, String> setosa = new HashMap<String, String>();
+        setosa.put("petal_length", "1.5");
+        setosa.put("petal_width", "0.1");
+        setosa.put("sepal_length", "4.9");
+        setosa.put("sepal_width", "3.1");
+        setosa.put("species", "setosa");
 
-        Map<String, String> versicolor = Map.of(
-                "petal_length", "3.8",
-                "petal_width", "1.1",
-                "sepal_length", "5.5",
-                "sepal_width", "2.4",
-                "species", "versicolor"
-        );
+        Map<String, String> versicolor = new HashMap<String, String>();
+        setosa.put("petal_length", "3.8");
+        setosa.put("petal_width", "1.1");
+        setosa.put("sepal_length", "5.5");
+        setosa.put("sepal_width", "2.4");
+        setosa.put("species", "versicolor");
 
-        Map<String, String> virginica = Map.of(
-                "petal_length", "6.0",
-                "petal_width", "2.2",
-                "sepal_length", "5.0",
-                "sepal_width", "1.5",
-                "species", "virginica"
-        );
+        Map<String, String> virginica = new HashMap<String, String>();
+        setosa.put("petal_length", "6.0");
+        setosa.put("petal_width", "2.2");
+        setosa.put("sepal_length", "5.0");
+        setosa.put("sepal_width", "1.5");
+        setosa.put("species", "virginica");
 
         Stream dataset = Arrays.stream(
                 new Map[]{setosa, versicolor, virginica}

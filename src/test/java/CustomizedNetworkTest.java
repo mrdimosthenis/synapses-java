@@ -5,6 +5,7 @@ import com.github.mrdimosthenis.synapses.Net;
 import com.github.mrdimosthenis.synapses.Fun;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Random;
@@ -14,18 +15,29 @@ import java.util.Random;
  */
 public class CustomizedNetworkTest {
 
+    static String readFile(String path)
+            throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.US_ASCII);
+    }
+
     public CustomizedNetworkTest() throws IOException {
     }
 
     int[] layers = {4, 6, 5, 3};
 
     Fun activationF(int layerIndex) {
-        return switch (layerIndex) {
-            case 0 -> Fun.SIGMOID;
-            case 1 -> Fun.IDENTITY;
-            case 2 -> Fun.LEAKY_RE_LU;
-            default -> Fun.TANH;
-        };
+        switch(layerIndex) {
+            case 0:
+                return Fun.SIGMOID;
+            case 1:
+                return Fun.IDENTITY;
+            case 2:
+                return Fun.LEAKY_RE_LU;
+            default:
+                return Fun.TANH;
+        }
     }
 
     double weightInitF(int _layerIndex) {
@@ -42,9 +54,9 @@ public class CustomizedNetworkTest {
         assertEquals(justCreatedNetJson, netJson.json());
     }
 
-    String neuralNetworkJson = Files.readString(Paths.get("test-resources/network.json"));
+    String neuralNetworkJson = readFile("test-resources/network.json");
 
-    String neuralNetworkSvg = Files.readString(Paths.get("test-resources/drawing.svg"));
+    String neuralNetworkSvg = readFile("test-resources/drawing.svg");
 
     Net neuralNetwork = new Net(neuralNetworkJson);
 

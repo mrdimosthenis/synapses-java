@@ -7,6 +7,7 @@ import com.github.mrdimosthenis.synapses.Codec;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -22,11 +23,18 @@ import org.apache.commons.lang3.ArrayUtils;
  */
 public class PreprocessorTest {
 
+    static String readFile(String path)
+            throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.US_ASCII);
+    }
+
     public PreprocessorTest() throws IOException {
     }
 
     String loadedPreprocessorJson =
-            Files.readString(Paths.get("test-resources/preprocessor.json"));
+            readFile("test-resources/preprocessor.json");
 
     Codec loadedPreprocessor = new Codec(loadedPreprocessorJson);
 
