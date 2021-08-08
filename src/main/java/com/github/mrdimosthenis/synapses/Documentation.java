@@ -2,7 +2,6 @@ package com.github.mrdimosthenis.synapses;
 
 /**
  * <strong>Synapses-java</strong> is a <strong>neural networks</strong> library for <strong>Java</strong>!
- * <p>
  * <h2>Basic usage</h2>
  * <p>
  * <h3>Install synapses-java</h3>

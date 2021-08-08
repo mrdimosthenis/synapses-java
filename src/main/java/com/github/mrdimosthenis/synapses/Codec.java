@@ -34,7 +34,6 @@ import synapses.jvm.CodecJ;
  * }
  * </pre>
  * <p>
- * <p>
  * Encode a data point:
  * <pre>
  * {@code

@@ -6,7 +6,6 @@ import synapses.jvm.StatsJ;
 
 /**
  * Measure the difference between the values predicted by a neural network and the observed values.
- * <p>
  * <pre>
  * {@code
  * Supplier<Stream<double[][]>> expAndPredVals = () -> Arrays.stream(
