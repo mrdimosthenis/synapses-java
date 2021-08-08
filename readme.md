@@ -18,7 +18,7 @@ A **neural networks** library for **Java**!
 ### Import the `Net` class
 
 ```java
-import com.github.mrdimosthenis.synapses.Fun;
+import com.github.mrdimosthenis.synapses.Net;
 ```
 
 ### Create a random neural network by providing its layer sizes

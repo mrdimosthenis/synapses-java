@@ -22,7 +22,7 @@ package com.github.mrdimosthenis.synapses;
  *
  * <pre>
  * {@code
- * import com.github.mrdimosthenis.synapses.Fun;
+ * import com.github.mrdimosthenis.synapses.Net;
  * }
  * </pre>
  * <p>
@@ -98,7 +98,7 @@ package com.github.mrdimosthenis.synapses;
  * {@code
  * import com.github.mrdimosthenis.synapses.Attribute;
  * import com.github.mrdimosthenis.synapses.Codec;
- * import com.github.mrdimosthenis.synapses.Net;
+ * import com.github.mrdimosthenis.synapses.Fun;
  * import com.github.mrdimosthenis.synapses.Stats;
  * }
  * </pre>
