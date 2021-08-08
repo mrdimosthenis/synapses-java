@@ -121,18 +121,18 @@ public class ReadmeTest {
         setosa.put("species", "setosa");
 
         Map<String, String> versicolor = new HashMap<String, String>();
-        setosa.put("petal_length", "3.8");
-        setosa.put("petal_width", "1.1");
-        setosa.put("sepal_length", "5.5");
-        setosa.put("sepal_width", "2.4");
-        setosa.put("species", "versicolor");
+        versicolor.put("petal_length", "3.8");
+        versicolor.put("petal_width", "1.1");
+        versicolor.put("sepal_length", "5.5");
+        versicolor.put("sepal_width", "2.4");
+        versicolor.put("species", "versicolor");
 
         Map<String, String> virginica = new HashMap<String, String>();
-        setosa.put("petal_length", "6.0");
-        setosa.put("petal_width", "2.2");
-        setosa.put("sepal_length", "5.0");
-        setosa.put("sepal_width", "1.5");
-        setosa.put("species", "virginica");
+        virginica.put("petal_length", "6.0");
+        virginica.put("petal_width", "2.2");
+        virginica.put("sepal_length", "5.0");
+        virginica.put("sepal_width", "1.5");
+        virginica.put("species", "virginica");
 
         Stream dataset = Arrays.stream(
                 new Map[]{setosa, versicolor, virginica}
