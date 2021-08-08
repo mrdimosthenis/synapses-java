@@ -12,6 +12,8 @@ inThisBuild(List(
   )
 ))
 
+val scala3Version = "3.0.1"
+
 val circeVersion = "0.14.1"
 
 lazy val root = project
@@ -19,9 +21,11 @@ lazy val root = project
   .settings(
     name := "synapses-java",
 
+    scalaVersion := scala3Version,
+
     libraryDependencies ++= Seq(
       "com.github.mrdimosthenis" % "synapses_3" % "8.0.0",
-      "junit" % "junit" % "4.13.2" % "test",
+      "com.novocode" % "junit-interface" % "0.11" % "test",
       "org.apache.commons" % "commons-csv" % "1.9.0" % "test",
       "com.google.guava" % "guava" % "30.1.1-jre" % "test",
       "org.apache.commons" % "commons-lang3" % "3.12.0" % "test"
