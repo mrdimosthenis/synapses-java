@@ -1,6 +1,13 @@
 /.idea/
 /docs/
-/target/
+/target/*.jar
+/target/*.pom
+/target/classes/
+/target/global-logging/
+/target/streams/
+/target/task-temp-directory/
+/target/update/
+/target/zinc/
 /project/project/
 /project/target/
 /.bsp/
