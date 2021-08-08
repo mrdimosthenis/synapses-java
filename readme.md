@@ -15,14 +15,10 @@ A **neural networks** library for **Java**!
 </dependency>
 ```
 
-### Import the classes
+### Import the `Net` class
 
 ```java
-import com.github.mrdimosthenis.synapses.Attribute;
-import com.github.mrdimosthenis.synapses.Codec;
 import com.github.mrdimosthenis.synapses.Fun;
-import com.github.mrdimosthenis.synapses.Net;
-import com.github.mrdimosthenis.synapses.Stats;
 ```
 
 ### Create a random neural network by providing its layer sizes
@@ -78,6 +74,15 @@ The `fit` method adjusts the weights of the neural network to a single observati
 In practice, for a neural network to be fully trained, it should be fitted with multiple observations.
 
 ## Advanced usage
+
+### Import the rest of the classes
+
+```java
+import com.github.mrdimosthenis.synapses.Attribute;
+import com.github.mrdimosthenis.synapses.Codec;
+import com.github.mrdimosthenis.synapses.Fun;
+import com.github.mrdimosthenis.synapses.Stats;
+```
 
 ### Boost the performance
 

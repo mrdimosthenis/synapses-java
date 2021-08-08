@@ -18,15 +18,11 @@ package com.github.mrdimosthenis.synapses;
  * }
  * </pre>
  * <p>
- * <h3>Import the classes</h3>
+ * <h3>Import the <code>Net</code> class</h3>
  *
  * <pre>
  * {@code
- * import com.github.mrdimosthenis.synapses.Attribute;
- * import com.github.mrdimosthenis.synapses.Codec;
  * import com.github.mrdimosthenis.synapses.Fun;
- * import com.github.mrdimosthenis.synapses.Net;
- * import com.github.mrdimosthenis.synapses.Stats;
  * }
  * </pre>
  * <p>
@@ -95,6 +91,17 @@ package com.github.mrdimosthenis.synapses;
  * In practice, for a neural network to be fully trained, it should be fitted with multiple observations.
  * <p>
  * <h2>Advanced usage</h2>
+ * <p>
+ * <h3>Import the rest of the classes</h3>
+ *
+ * <pre>
+ * {@code
+ * import com.github.mrdimosthenis.synapses.Attribute;
+ * import com.github.mrdimosthenis.synapses.Codec;
+ * import com.github.mrdimosthenis.synapses.Net;
+ * import com.github.mrdimosthenis.synapses.Stats;
+ * }
+ * </pre>
  * <p>
  * <h3>Boost the performance</h3>
  * <p>
