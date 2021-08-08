@@ -27,8 +27,6 @@ lazy val root = project
       "org.apache.commons" % "commons-lang3" % "3.12.0" % "test"
     ),
 
-    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
-
     crossPaths := false,
     autoScalaLibrary := false
   )
